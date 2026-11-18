@@ -23,6 +23,10 @@ def predict_demo():
     }
 @app.post("/predict")
 def predict( data: House ):
+    predicted_price = data.area *30000 + data.bedrooms *20000
     return {
-        "area_of_house" : data.area *30000 + data.bedrooms *20000
+        "area": data.area,
+        "bedrooms" : data.bedrooms,
+        "predicted_price" : predicted_price 
     }
+    
